@@ -1,5 +1,19 @@
+body{
+  background-image: url("https://media.istockphoto.com/photos/empty-dark-blue-studio-room-with-light-and-shadow-abstract-background-picture-id1339787499?b=1&k=20&m=1339787499&s=170667a&w=0&h=psnH04yZpoVzxa4xTZt4hDwff5WiO0cQrtnYdRttkSI=");
+  background-repeat: none;
+  background-size: cover;
+}
 .App {
   text-align: center;
+}
+.header{
+  width: 40%;
+  margin: 20px auto;
+  background-color: rgb(34, 34, 34);
+  padding: 20px;
+  border-radius: 20px;
+  color: rgb(183, 183, 183);
+  border: solid grey 1px;
 }
 
 .App-logo {
@@ -34,5 +48,10 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media(max-width:768px) {
+  .header{
+      width: 90%;
   }
 }
