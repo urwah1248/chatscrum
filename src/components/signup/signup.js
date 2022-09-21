@@ -1,9 +1,10 @@
 import React from 'react'
 import './signup.css'
-import content from '../../static/index' //Importing prop base file
+import content from '../static/index' //Importing prop base file
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { Link } from 'react-router-dom'
 
 const schema = yup.object().shape(
     {
@@ -25,10 +26,11 @@ function SignUp(){
 
     return(
         <div className="signup">
-            <h2 id="signupheading">Don't have an account!</h2>
-            <h3 id='here'>Sign Up, here</h3>
+            
+            <h2 id="signinheading">Already have an account?</h2>
+            <h3 className='here'><Link to='/sign-in' className='link'>Sign In, here</Link></h3>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} action="/static/data.js" method='POST'>
                 {content.inputs.map((input, key) =>{
                     return (
                         <div className="signupfieldsets">
@@ -44,6 +46,8 @@ function SignUp(){
                 })}
                 <input type="submit" className='button' />
             </form>
+
+            <button><Link to='/'>Back to Home</Link></button>
         </div>
     )
 }

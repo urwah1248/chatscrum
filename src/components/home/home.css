@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.chatscrum{
+    display: block;
+    font-size: 100px;
+    line-height: 50px;
+    font-weight: 500;
+    color: rgb(224, 70, 70);
+    margin-bottom: 40px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 5px 0 30px white;
+}
+.home h1{
+    color: rgb(99, 99, 237);
+    font-size: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 5px 0 30px white;
+}
+.home .links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 50px;
+}
+.home{
+    margin: 50px;
+}
+.home .link{
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
+.home .link:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+@media(max-width:768px) {
+    .home{
+        width: 90%;
+    }
+}

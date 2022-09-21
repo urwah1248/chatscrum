@@ -1,0 +1,110 @@
+.scrumboard{
+    color:white;
+}
+header{
+    background-color: rgb(0, 105, 197);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.userinfo{
+    font-size: 20px;
+    line-height: 10px;
+    font-weight: 500;
+}
+.taskboxes{
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    gap: 50px;
+}
+
+.weeklytasks, .dailytasks{
+    width: 35%;
+    height: 500px;
+    background-color: black;
+    border: solid 3px white;
+}
+.weeklytasks h1, .dailytasks h1{
+    background-color: white;
+    color: black;
+    margin: 0;
+    line-height: 60px;
+    text-align: center;
+}
+.scrumboard li{
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+}
+.button button{
+    background-color: black;
+    border: solid 5px rgb(0, 184, 184);
+    font-size: 50px;
+    color: rgb(0, 184, 184);
+    width: 500px;
+    border-radius: 20px;
+}
+.button button:hover{
+    background-color: rgb(0, 184, 184);
+    color: black;
+    transition: 150ms;
+}
+.button button:not(hover){
+    transition: 150ms;
+}
+.buttons{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+#modal{
+    border: solid 3px cyan;
+    background-color: black;
+    color: rgb(0, 184, 184);
+    width: 20%;
+    align-items: center;
+    position:absolute;
+    bottom: 8%;
+    left: 20%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+}
+#modal button{
+    background-color: black;
+    border: solid 1px rgb(0, 184, 184);
+    color: rgb(0, 184, 184);
+    border-radius: 3px;
+}
+#modal .buttons{
+    margin-top: 5px;
+    gap: 20px;
+}
+#modal button:hover{
+        background-color: rgb(0, 184, 184);
+        color: black;
+        transition: 150ms;
+    }
+#modal button:not(hover){
+    transition: 150ms;
+} 
+
+#modal input{
+    width: 98%;
+    background-color: black;
+    border: solid 1px rgb(0, 184, 184);
+    color: rgb(0, 184, 184);
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+
