@@ -17,14 +17,15 @@ header{
     display: flex;
     margin: 10px auto;
     justify-content: center;
-    gap: 50px;
+    gap: 5vw;
 }
 
 .weeklytasks, .dailytasks{
-    width: 35%;
+    width: 34.3vw;
     height: 500px;
     background-color: black;
-    border: solid 3px white;
+    border: solid 5px white;
+    border-radius: 1rem;
 }
 .weeklytasks h1, .dailytasks h1{
     background-color: white;
@@ -34,16 +35,15 @@ header{
     text-align: center;
 }
 .scrumboard li{
-    width: 100%;
     font-size: 20px;
     line-height: 30px;
 }
 .button button{
     background-color: black;
     border: solid 5px rgb(0, 184, 184);
-    font-size: 50px;
+    font-size: 5vw;
     color: rgb(0, 184, 184);
-    width: 500px;
+    width: 35vw;
     border-radius: 20px;
 }
 .button button:hover{
@@ -57,7 +57,7 @@ header{
 .buttons{
     align-items: center;
     display: flex;
-    gap: 20px;
+    gap: 5vw;
     justify-content: center;
 }
 #modal{
