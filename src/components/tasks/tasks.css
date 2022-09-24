@@ -11,12 +11,23 @@ ul {
 .task, .dailytasks li{
     padding: 0;
     margin: 10px 10px;
-    border: solid 1px white;
+    border: solid 2px cyan;
     text-indent: 10px;
     border-radius: 1rem;
+    background-color: white;
+    color: black;
+    font-weight: 500;
 }
 
 .task:hover{
     cursor: pointer;
     user-select: none;
+}
+
+.brown{
+    color: brown;
+    text-align: end;
+}
+.blue{
+    color: blue;
 }

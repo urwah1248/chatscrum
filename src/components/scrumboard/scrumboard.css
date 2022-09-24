@@ -26,6 +26,7 @@ header{
     background-color: black;
     border: solid 5px white;
     border-radius: 1rem;
+    overflow-y: scroll;
 }
 .weeklytasks h1, .dailytasks h1{
     background-color: white;
@@ -108,3 +109,9 @@ header{
     display: none;
 }
 
+#closebtn{
+    float: right;
+}
+#addbtn{
+    width: 100%;
+}

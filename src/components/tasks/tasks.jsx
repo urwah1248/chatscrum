@@ -3,16 +3,16 @@ import tasklist from "../static/tasks";
 import "./tasks.css";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-export default function Tasks() {
-  const [taskroll, updateTaskRoll] = useState(tasklist);
+export default function Tasks({data, deleteTask}) {
+  const [taskroll, updateTaskRoll] = useState(data);
 
   const handleOnDragEnd = (result) => {
     if (result.destination) return;
-    const items = Array.from(taskroll);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
+    const tasks = Array.from(taskroll);
+    const [reorderedItem] = tasks.splice(result.source.index, 1);
+    tasks.splice(result.destination.index, 0, reorderedItem);
 
-    updateTaskRoll(items);
+    updateTaskRoll(tasks);
   };
   return (
     <div className="taskboxes">
@@ -22,15 +22,27 @@ export default function Tasks() {
             <Droppable droppableId="tasket">
               {(provided) => (
                   <ul id="weeklytasks" {...provided.droppableProps} ref={provided.innerRef} >
-                    {taskroll.map(({ id, item }, index) => (
-                        <Draggable key={id} draggableId={id} index={index}>
-                          {provided => (
-                              <li id={id} className="task" {...provided.draggableProps}  {...provided.dragHandleProps} ref={provided.innerRef}>
-                                {item}
-                              </li>
-                            )}
-                        </Draggable>)
-                    )}
+                    {data.map(({ id, name, time_created, scrumgoalhistory_set }, idx) => {
+                    return (
+                      <Draggable draggableId={`${id}`} index={idx} key={id}>
+                        {(provided) => (
+                          <li onClick={() => {deleteTask(id)}} className="task"{...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                            {name}
+                            <div className="blue">
+                              {time_created.slice(0, 10)} at {time_created.slice(12, 16)}
+                            </div>
+                            <div className="brown">
+                              {scrumgoalhistory_set.map(
+                                ({ id, done_by }) => (
+                                  <p key={id}>{done_by}</p>
+                                )
+                              )}
+                            </div>
+                          </li>
+                          
+                        )}
+                      </Draggable>)
+                  })}
                     {provided.placeholder}
                   </ul>
                 )}
@@ -41,34 +53,31 @@ export default function Tasks() {
             <h1>Daily Tasks</h1>
             <Droppable droppableId="tasketer">
               {(provided) => (
-                <ul id="dailytasks" {...provided.droppableProps} ref={provided.innerRef}>
-
-                  {taskroll.map(({id, item}, index) => {
+                  <ul id="weeklytasks" {...provided.droppableProps} ref={provided.innerRef} >
+                    {data.map(({ id, name, time_created, scrumgoalhistory_set }, idx) => {
                     return (
-                      <Draggable key={id} draggableId={id} index={index}>
+                      <Draggable draggableId={`${id}`} index={idx} key={id}>
                         {(provided) => (
-                          <li {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>{item}</li>
+                          <li onClick={() => {deleteTask(id)}} className="task"{...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                            {name}
+                            <div className="blue">
+                              {time_created.slice(0, 10)} at {time_created.slice(12, 16)}
+                            </div>
+                            <div className="brown">
+                              {scrumgoalhistory_set.map(
+                                ({ id, done_by }) => (
+                                  <p key={id}>{done_by}</p>
+                                )
+                              )}
+                            </div>
+                          </li>
+                          
                         )}
                       </Draggable>)
                   })}
-                  {/* <Draggable draggableId="dragone" index={1}>
-                  //   {(provided) => (
-                  //     <li className="task" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                  //       Sample2
-                  //     </li>
-                  //   )}
-                  // </Draggable>
-                  // <Draggable draggableId="dragtwo" index={2}>
-                  //   {(provided) => (
-                  //     <li className="task" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                  //       Sample1
-                  //     </li>
-                  //   )}
-                  // </Draggable> */}
-
-                  {/* {provided.placeholder} */}
-                </ul>
-              )}
+                    {provided.placeholder}
+                  </ul>
+                )}
             </Droppable>
           </div>
       </DragDropContext>
