@@ -15,3 +15,8 @@ ul {
     text-indent: 10px;
     border-radius: 1rem;
 }
+
+.task:hover{
+    cursor: pointer;
+    user-select: none;
+}
